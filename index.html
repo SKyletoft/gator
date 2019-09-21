@@ -2,20 +2,23 @@
 <html>
     <head>
         <title>
-            Dalacamp 9 Gåtor
+            Dalacamp 9 GÃ¥tor
         </title>
         <script src="script.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
         <div id="centredbody">
-            <label>
+            <label id="questionLabel">
                 {QUESTION}
             </label><br>
             <input id="inputbox" type="text"/><br>
-            <button id="okbutton">
+            <button id="okbutton" onclick="checkAnswer()">
                 Svara
             </button>
         </div>
     </body>
 </html>
+<script>
+init();
+</script>
