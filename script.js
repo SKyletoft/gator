@@ -23,14 +23,12 @@ function checkAnswer () {
 const questions = [
     {
         generateText: function () {
-            document.getElementById("questionLabel").innerHTML = this.question;
+            document.getElementById("questionLabel").innerHTML = "Vad säger morsen? [LÄNK]";
             document.getElementById("inputbox").setAttribute("type", "text");
         },
         validateAnswer: function () {
-            return document.getElementById("inputbox").value === this.answer;
+            return document.getElementById("inputbox").value === "HEJ";
         },
-        question: "Vad säger morsen? [LÄNK]",
-        answer: "HEJ",
         nextQuestion: 1
     },
     {
@@ -40,8 +38,7 @@ const questions = [
         },
         validateAnswer: function () {
             const imageformats = [".png", ".jpg", "jpeg", ".gif", "tiff", ".bmp"]
-            let text = document.getElementById("inputbox").value.toString();
-            text = text.substr(text.length - 4);
+            const text = document.getElementById("inputbox").value.toString().substr(text.length - 4);
             console.log(text);
             if (imageformats.indexOf(text) != -1) {
                 return true;
