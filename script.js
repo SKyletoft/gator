@@ -23,7 +23,7 @@ function checkAnswer () {
 const questions = [
     {
         generateText: function () {
-            document.getElementById("questionLabel").innerHTML = "Vad säger morsen? [LÄNK]";
+            document.getElementById("questionLabel").innerHTML = "Vad säger morsen?<br><audio controls><source src='assets/morse.wav' type='audio/wav'>Your browser does not support the audio element.</audio>";
             document.getElementById("inputbox").setAttribute("type", "text");
         },
         validateAnswer: function () {
@@ -38,7 +38,8 @@ const questions = [
         },
         validateAnswer: function () {
             const imageformats = [".png", ".jpg", "jpeg", ".gif", "tiff", ".bmp"]
-            const text = document.getElementById("inputbox").value.toString().substr(text.length - 4);
+            let text = document.getElementById("inputbox").value.toString()
+            text = text.substr(text.length - 4);
             console.log(text);
             if (imageformats.indexOf(text) != -1) {
                 return true;
