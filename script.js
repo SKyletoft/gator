@@ -23,12 +23,14 @@ function checkAnswer () {
 const questions = [
     {
         generateText: function () {
-            document.getElementById("questionLabel").innerHTML = "Vad säger morsen?<br><audio controls><source src='assets/morse.wav' type='audio/wav'>Your browser does not support the audio element.</audio>";
+            document.getElementById("questionLabel").innerHTML = this.question;
             document.getElementById("inputbox").setAttribute("type", "text");
         },
         validateAnswer: function () {
-            return document.getElementById("inputbox").value === "HEJ";
+            return document.getElementById("inputbox").value === this.answer;
         },
+        question: "Vad säger morsen? [LÄNK]",
+        answer: "HEJ",
         nextQuestion: 1
     },
     {
