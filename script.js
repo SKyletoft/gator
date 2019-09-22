@@ -50,11 +50,11 @@ const questions = [
     },
     {
         generateText: function () {
-            document.getElementById("questionLabel").innerHTML = "Hur många trianglar?<br><img src='https://1.bp.blogspot.com/-5xv6Cg1yhFo/VNLXEhuYiXI/AAAAAAAAAXw/dNgNTrE4G5M/s1600/image002.gif' width='250'/>"
+            document.getElementById("questionLabel").innerHTML = "Hur många trianglar? (24st)<br><img src='https://1.bp.blogspot.com/-5xv6Cg1yhFo/VNLXEhuYiXI/AAAAAAAAAXw/dNgNTrE4G5M/s1600/image002.gif' width='250'/>"
             document.getElementById("inputbox").setAttribute("type", "text");
         },
         validateAnswer: function () {
-            if (document.getElementById("inputbox").value === "27") {
+            if (document.getElementById("inputbox").value === "24") {
                 return true;
             }
             return false;
