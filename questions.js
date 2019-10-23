@@ -43,14 +43,15 @@ const questions = [
     },
     {
         generateText: function () {
-            document.getElementById("questionLabel").innerText = "Ladda upp en bild på er patrull där ni lagar tigerkaka till era ledare!<br><a href=\"https://www.ica.se/recept/tigerkaka-719813/\">[Exempelrecept]</a>";
+            document.getElementById("questionLabel").innerHTML = "Ladda upp en bild på er patrull där ni lagar tigerkaka till era ledare!<br><a href=\"https://www.ica.se/recept/tigerkaka-719813/\">[Exempelrecept]</a>";
             document.getElementById("inputbox").setAttribute("type", "file");
         },
         validateAnswer: function () {
             const imageformats = [".png", ".jpg", "jpeg", ".gif", "tiff", ".bmp"]
-            let text = document.getElementById("inputbox").value.toString()
-            text = text.substr(text.length - 4);
-            console.log(text);
+            let text = document.getElementById("inputbox")
+                               .value
+                               .toString()
+                               .substr(text.length - 4);
             if (imageformats.indexOf(text) != -1) {
                 return true;
             }
@@ -78,7 +79,8 @@ const questions = [
                         .value ===
                 "250" ||
                 document.getElementById("inputbox")
-                        .value ===
+                        .value
+                        .toLowerCase ===
                 "tvåhundrafemtio"
             );
         },
@@ -95,16 +97,45 @@ const questions = [
                         .value ===
                 "1983" ||
                 document.getElementById("inputbox")
-                        .value ===
+                        .value
+                        .toLowerCase() ===
                 "nittonåttiotre"
             );
         },
         nextQuestion: 7
     },
     {
-        
+        generateText: function () {
+            document.getElementById("questionLabel").innerHTML = "";
+            document.getElementById("inputbox").setAttribute("type", "text");
+        },
+        validateAnswer: function () {
+            let input = document.getElementById("inputbox")
+                                .value
+                                .toLowerCase();
+            const laws = "en scout söker sin tro och respekterar andras en scout är ärlig och pålitlig en scout är vänlig och hjälpsam en scout visar hänsyn och är en god kamrat en scout möter svårigheter med glatt humör en scout möter svårigheter med gott humör en scout lär känna och vårdar naturen en scout känner ansvar för sig själv och andra";
+            return ( // Accepts "en", "och", "är" and so on?
+                laws.match(/input/).length > 0
+            );
+        },
+        nextQuestion: 0
     }
 ];
+
+/*
+TEMPLATE
+    {
+        generateText: function () {
+            document.getElementById("questionLabel").innerHTML = "";
+            document.getElementById("inputbox").setAttribute("type", "text");
+        },
+        validateAnswer: function () {
+            return ();
+        },
+        nextQuestion: 0
+    }
+    
+*/
 
 const questionsOLD = [
     {
