@@ -28,8 +28,7 @@ function checkAnswer () {
     if (questions[riddleNumber].validateAnswer()) {
         console.log("CORRECT!");
         riddleNumber = questions[riddleNumber].nextQuestion;
-        localStorage.riddleNumber = riddleNumber;
-        questions[riddleNumber].generateText();
+        updatePage();
         flashCharacter(hiddenSentence[riddleNumber], 500)
     } else {
         console.log("FALSE");
@@ -39,4 +38,10 @@ function checkAnswer () {
 
 function goBack () {
     riddleNumber = Math.max(0, riddleNumber - 1); //MAKE SURE THIS LOGIC STILL APPLIES WHEN ALL QUESTIONS ARE ADDED!
+    updatePage();
+}
+
+function updatePage () {
+    localStorage.riddleNumber = riddleNumber;
+    questions[riddleNumber].generateText();
 }
