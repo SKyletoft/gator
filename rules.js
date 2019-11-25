@@ -1,4 +1,5 @@
 let riddleNumber = 0;
+let group = 3; //0: spårare, 1: upptäckare, 2: äventyrare, 3: utmanare
 
 function init () {
     if (localStorage.riddleNumber !== undefined) {
@@ -33,12 +34,18 @@ function lowerCaseInput () {
     );
 }
 
+function getSentenceSegment () {
+    const lettersPerSegment = Math.ceil(hiddenSentence.length / questionsByGroup[group]);
+    const segment = riddleNumber - startingQuestionByGroup[group];
+    return hiddenSentence.substr(segment * lettersPerSegment, lettersPerSegment);
+}
+
 function checkAnswer () {
     if (questions[riddleNumber].validateAnswer()) {
         console.log("CORRECT!");
         riddleNumber = questions[riddleNumber].nextQuestion;
         updatePage();
-        flashCharacter(hiddenSentence[riddleNumber], 500);
+        flashCharacter(getSentenceSegment(), 500);
         document.getElementById("inputbox").value = null;
     } else {
         console.log("FALSE");
