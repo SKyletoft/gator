@@ -165,7 +165,7 @@ const questions = [
 			const input = lowerCaseInput();
 			return input === "t";
         },
-        nextQuestion: 12
+        nextQuestion: 13
 	},
     {
         generateText: function () {
