@@ -10,6 +10,7 @@
 }
 label {
     width: 80%;
+    font-size: 50px;
 }
 input {
     margin-top: 5px;
@@ -21,4 +22,21 @@ input {
 button {
     width: 100%;
     border: 1px solid black;
+    font-size: 30px;
+}
+#leaves {
+    width: 100%;
+}
+@media screen and (max-width: 1000px) {
+    #centredbody {
+        font-size: 500%;
+    }
+    button {
+        font-size: larger;
+        height: 5cm;
+    }
+    input {
+        height: 2cm;
+        font-size: xx-large;
+    }
 }

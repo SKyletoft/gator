@@ -24,16 +24,24 @@ function hide () {
     document.getElementById("centredbody").style.display = "";
 }
 
+function lowerCaseInput () {
+    return (
+        document.getElementById("inputbox")
+            .value
+            .toString()
+            .toLowerCase()
+    );
+}
+
 function checkAnswer () {
     if (questions[riddleNumber].validateAnswer()) {
         console.log("CORRECT!");
         riddleNumber = questions[riddleNumber].nextQuestion;
         updatePage();
-        flashCharacter(hiddenSentence[riddleNumber], 500)
+        flashCharacter(hiddenSentence[riddleNumber], 500);
     } else {
         console.log("FALSE");
     }
-    hide();
 }
 
 function goBack () {

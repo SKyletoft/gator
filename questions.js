@@ -7,14 +7,8 @@ const questions = [
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
-			return (
-				document.getElementById("inputbox")
-					.value
-					.toLowerCase()
-					.match(/lila/)
-					.length >
-				0
-			);
+			const input = lowerCaseInput();
+			return input.match(/lila/).length > 0;
 		},
 		nextQuestion: 1
 	},
@@ -24,11 +18,8 @@ const questions = [
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
-			return (
-				document.getElementById("inputbox")
-					.value ===
-				"24"
-			);
+			const input = lowerCaseInput();
+			return input.match(/24/).length > 0;
 		},
 		nextQuestion: 2
 	},
@@ -48,22 +39,35 @@ const questions = [
 		},
 		validateAnswer: function () {
 			const imageformats = [".png", ".jpg", "jpeg", ".gif", "tiff", ".bmp"]
-			let text = document.getElementById("inputbox")
-				.value
-				.toString()
-				.substr(text.length - 4);
-			if (imageformats.indexOf(text) != -1) {
-				return true;
-			}
-			return false;
+			let text = lowerCaseInput();
+			text = text.substr(text.length - 4);
+			return imageformats.includes(text);
 		},
 		nextQuestion: 4
 	},
 	{
 		generateText: function () {
-			//Löv
+			document.getElementById("questionLabel").innerHTML = "Identifiera följande löv<br/><img src=\"assets/blad/utmanare.png\" id=\"leaves\"/>";
+			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
+			const ans = [
+				/äpp/,
+				/biggarå/,
+				/körsbär/,
+				/päron/,
+				/plommon/
+			];
+			const input = lowerCaseInput().split(" ");
+			if (input.length != ans.length) {
+				return false;
+			}
+			for (let i = 0; i < 5; i++) {
+				if (input[i].match(ans[i]) === null) {
+					console.log("failed at ", i);
+					return false;
+				}
+			}
 			return true;
 		},
 		nextQuestion: 5
@@ -74,15 +78,8 @@ const questions = [
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
-			return (
-				document.getElementById("inputbox")
-					.value ===
-				"250" ||
-				document.getElementById("inputbox")
-					.value
-					.toLowerCase ===
-				"tvåhundrafemtio"
-			);
+			const input = lowerCaseInput();
+			return input === "250" || input === "tvåhundrafemtio";
 		},
 		nextQuestion: 6
 	},
@@ -92,15 +89,8 @@ const questions = [
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
-			return (
-				document.getElementById("inputbox")
-					.value ===
-				"1983" ||
-				document.getElementById("inputbox")
-					.value
-					.toLowerCase() ===
-				"nittonåttiotre"
-			);
+			const input = lowerCaseInput();
+			return input === "1983" || input === "nittonåttiotre";
 		},
 		nextQuestion: 7
 	},
@@ -110,16 +100,107 @@ const questions = [
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
-			let input = document.getElementById("inputbox")
-				.value
-				.toLowerCase();
-			const laws = "en scout söker sin tro och respekterar andras en scout är ärlig och pålitlig en scout är vänlig och hjälpsam en scout visar hänsyn och är en god kamrat en scout möter svårigheter med glatt humör en scout möter svårigheter med gott humör en scout lär känna och vårdar naturen en scout känner ansvar för sig själv och andra";
-			return ( // Accepts "en", "och", "är" and so on?
-				laws.match(input.toLowerCase()).length > 0
-			);
+			const input = lowerCaseInput();
+			const laws = [
+				/söker sin tro och respekterar andras/,
+				/är ärlig och pålitlig/,
+				/är vänlig och hjälpsam/,
+				/visar hänsyn och är en god kamrat/,
+				/möter svårigheter med glatt humör/,
+				/möter svårigheter med gott humör/,
+				/lär känna och vårdar naturen/,
+				/känner ansvar för sig själv och andra/
+			];
+			let matches = 0;
+			laws.forEach((law) => {
+				if (input.match(law)) {
+					matches++;
+				}
+			});
+			return matches > 0;
 		},
-		nextQuestion: 0
-	}
+		nextQuestion: 8
+	},
+	{
+		generateText: function () {
+			document.getElementById("questionLabel").innerText = "Ta en \"Gäster med gester\"-bild i enighet med scoutlag #4";
+			document.getElementById("inputbox").setAttribute("type", "file");
+		},
+		validateAnswer: function () {
+			const imageformats = [".png", ".jpg", "jpeg", ".gif", "tiff", ".bmp"]
+			let input = lowerCaseInput()
+			input = input.substr(input.length - 4);
+			return imageformats.includes(input);
+		},
+		nextQuestion: 9
+	},
+	{
+		generateText: function () {
+            document.getElementById("questionLabel").innerHTML = "Vad är det för symbol på taket av byggnaden 59°21’12.4”N 18°24’22.6”E";
+            document.getElementById("inputbox").setAttribute("type", "text");
+        },
+        validateAnswer: function () {
+			const input = lowerCaseInput();
+			return input.match(/triangel/).length > 0;
+        },
+        nextQuestion: 10
+	},
+	{
+		generateText: function () {
+            document.getElementById("questionLabel").innerHTML = "Bättre lyss till den sträng som brast, än att aldrig ha spänt en ______";
+            document.getElementById("inputbox").setAttribute("type", "text");
+        },
+        validateAnswer: function () {
+			const input = lowerCaseInput();
+			return input.match(/båge/).length > 0;
+        },
+        nextQuestion: 11
+	},
+	{
+		generateText: function () {
+            document.getElementById("questionLabel").innerHTML = "En man kom in på en restaurang och sa endast en bokstav. Vad beställde han?";
+            document.getElementById("inputbox").setAttribute("type", "text");
+        },
+        validateAnswer: function () {
+			const input = lowerCaseInput();
+			return input === "t";
+        },
+        nextQuestion: 12
+	},
+    {
+        generateText: function () {
+			//MUSIKKORSORD?
+            document.getElementById("questionLabel").innerHTML = "Just click next";
+            document.getElementById("inputbox").setAttribute("type", "text");
+        },
+        validateAnswer: function () {
+			const input = lowerCaseInput();
+            return true;
+        },
+        nextQuestion: 13
+    },
+    {
+        generateText: function () {
+            document.getElementById("questionLabel").innerHTML = "I vilket landskap ligger dalarna?";
+            document.getElementById("inputbox").setAttribute("type", "text");
+        },
+        validateAnswer: function () {
+			const input = lowerCaseInput();
+            return lowerCaseInput.match(/dalarna/).length > 0;
+        },
+        nextQuestion: 14
+    },
+    {
+        generateText: function () {
+            document.getElementById("questionLabel").innerHTML = "Vilken är näst den vanligaste bokstaven i svenska språket?";
+            document.getElementById("inputbox").setAttribute("type", "text");
+        },
+        validateAnswer: function () {
+			const input = lowerCaseInput();
+            return lowerCaseInput === "a";
+        },
+        nextQuestion: 0
+    }
 ];
 
 /*
@@ -130,11 +211,11 @@ TEMPLATE
             document.getElementById("inputbox").setAttribute("type", "text");
         },
         validateAnswer: function () {
+			const input = lowerCaseInput();
             return ();
         },
         nextQuestion: 0
     }
-    
 */
 
 const questionsOLD = [
