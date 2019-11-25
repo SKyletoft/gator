@@ -27,6 +27,9 @@ button {
 #leaves {
     width: 100%;
 }
+#charFlashDiv {
+    font-size: 500px;
+}
 @media screen and (max-width: 1000px) {
     #centredbody {
         font-size: 500%;

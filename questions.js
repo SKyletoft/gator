@@ -1,4 +1,4 @@
-const hiddenSentence = "59°58´57.8”N 15°26´50.2”E";
+const hiddenSentence = "59°58'57.8\"N_15°26'50.2\"E";
 const questionsByGroup = [0,0,0,14];
 const startingQuestionByGroup = [0,0,0,0];
 

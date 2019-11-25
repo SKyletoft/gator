@@ -35,9 +35,9 @@ function lowerCaseInput () {
 }
 
 function getSentenceSegment () {
-    const lettersPerSegment = Math.ceil(hiddenSentence.length / questionsByGroup[group]);
-    const segment = riddleNumber - startingQuestionByGroup[group];
-    return hiddenSentence.substr(segment * lettersPerSegment, lettersPerSegment);
+    const start = Math.round((riddleNumber - startingQuestionByGroup[group]) * (hiddenSentence.length / (1 + questionsByGroup[group])));
+    const end = Math.round((riddleNumber - startingQuestionByGroup[group] + 1) * (hiddenSentence.length / (1 + questionsByGroup[group])));
+    return hiddenSentence.substring(start, end);
 }
 
 function checkAnswer () {
