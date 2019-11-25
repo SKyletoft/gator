@@ -39,6 +39,7 @@ function checkAnswer () {
         riddleNumber = questions[riddleNumber].nextQuestion;
         updatePage();
         flashCharacter(hiddenSentence[riddleNumber], 500);
+        document.getElementById("inputbox").value = null;
     } else {
         console.log("FALSE");
     }
