@@ -16,7 +16,7 @@ const questions = [
 	},
 	{
 		generateText: function () {
-			document.getElementById("questionLabel").innerHTML = "Hur många trianglar? (24st)<br><img src='https://1.bp.blogspot.com/-5xv6Cg1yhFo/VNLXEhuYiXI/AAAAAAAAAXw/dNgNTrE4G5M/s1600/image002.gif' width='250'/>"
+			document.getElementById("questionLabel").innerHTML = "Hur många trianglar?<br><img src='https://1.bp.blogspot.com/-5xv6Cg1yhFo/VNLXEhuYiXI/AAAAAAAAAXw/dNgNTrE4G5M/s1600/image002.gif' width='250'/>"
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
@@ -76,7 +76,7 @@ const questions = [
 	},
 	{
 		generateText: function () {
-			document.getElementById("questionLabel").innerHTML = "Hur mycket är dubbelt av hälften av 250?";
+			document.getElementById("questionLabel").innerHTML = "Hur mycket är dubbelt av hälften av tvåhundrafemtio?";
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
@@ -183,12 +183,12 @@ const questions = [
     },
     {
         generateText: function () {
-            document.getElementById("questionLabel").innerHTML = "I vilket landskap ligger dalarna?";
+            document.getElementById("questionLabel").innerHTML = "I vilket landskap ligger Kopparbo?";
             document.getElementById("inputbox").setAttribute("type", "text");
         },
         validateAnswer: function () {
 			const input = lowerCaseInput();
-            return lowerCaseInput.match(/dalarna/).length > 0;
+            return input.match(/dalarna/).length > 0;
         },
         nextQuestion: 14
     },
@@ -199,7 +199,7 @@ const questions = [
         },
         validateAnswer: function () {
 			const input = lowerCaseInput();
-            return lowerCaseInput === "a";
+            return input === "a";
         },
         nextQuestion: 0
     }
