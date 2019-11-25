@@ -4,9 +4,22 @@ let group = 3; //0: spårare, 1: upptäckare, 2: äventyrare, 3: utmanare
 function init () {
     if (localStorage.riddleNumber !== undefined) {
         riddleNumber = parseInt(localStorage.riddleNumber);
+        document.getElementById("centredbody").style.display = "";
+        document.getElementById("initialSetupDiv").style.display = "None";
+    } else {
+        document.getElementById("centredbody").style.display = "None";
+        document.getElementById("initialSetupDiv").style.display = "";
     }
     document.getElementById("charFlashDiv").style.display = "None";
     questions[riddleNumber].generateText();
+}
+
+function start (selection) {
+    group = selection;
+    riddleNumber = startingQuestionByGroup[group];
+    localStorage.riddleNumber = riddleNumber;
+    localStorage.group = group;
+    init();
 }
 
 function flashCharacter (char, delay) {
