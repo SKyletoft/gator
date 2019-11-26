@@ -7,6 +7,12 @@
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 10%;
+    animation-timing-function: linear;
+    animation-name: fail;
+    animation-duration: 0.25s;
+    
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
 }
 #initialSetupDiv {
     width: 80%;
@@ -54,5 +60,27 @@ button {
     input {
         height: 2cm;
         font-size: xx-large;
+    }
+}
+@keyframes fail {
+    0% {
+        margin-left: 10%;
+    }
+    25% {
+        margin-left: 20%;
+    }
+    75% {
+        margin-left: 0%;
+    }
+    100% {
+        margin-left: 10%;
+    }
+}
+@keyframes success {
+    0% {
+        margin-left: 10%;
+    }
+    100% {
+        margin-left: 10%;
     }
 }

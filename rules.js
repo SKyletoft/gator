@@ -54,6 +54,7 @@ function getSentenceSegment () {
 }
 
 function checkAnswer () {
+    console.clear();
     if (questions[riddleNumber].validateAnswer()) {
         console.log("CORRECT!");
         riddleNumber = questions[riddleNumber].nextQuestion;
@@ -62,7 +63,18 @@ function checkAnswer () {
         document.getElementById("inputbox").value = null;
     } else {
         console.log("FALSE");
+        document.getElementById("centredbody").style.animationName = "fail";
+        document.getElementById("centredbody").style.animationPlayState = "running";
+        setTimeout(endAnimation, 500);
     }
+}
+
+function endAnimation () {
+    let element = document.getElementById("centredbody");
+    element.style.animationDelay = "0s";
+    element.style.animationPlayState = "paused";
+    element.style.marginLeft = "10%";
+    element.style.animationName = "success";
 }
 
 function goBack () {

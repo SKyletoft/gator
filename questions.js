@@ -10,7 +10,7 @@ const questions = [
 		},
 		validateAnswer: function () {
 			const input = lowerCaseInput();
-			return input.match(/lila/).length > 0;
+			return input.match(/lila/) != null;
 		},
 		nextQuestion: 1
 	},
@@ -21,7 +21,7 @@ const questions = [
 		},
 		validateAnswer: function () {
 			const input = lowerCaseInput();
-			return input.match(/24/).length > 0;
+			return input.match(/24/) != null;
 		},
 		nextQuestion: 2
 	},
