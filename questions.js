@@ -149,61 +149,61 @@ const questions = [
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
-				const input = lowerCaseInput();
-				return input.match(/triangel/).length > 0;
+			const input = lowerCaseInput();
+			return input.match(/triangel/) != null;
 		}
 	},
 	{
 		generateText: function () {
-        		document.getElementById("questionLabel").innerHTML = "Bättre lyss till den sträng som brast, än att aldrig ha spänt en ______";
-        		document.getElementById("inputbox").setAttribute("type", "text");
-        },
-        validateAnswer: function () {
+			document.getElementById("questionLabel").innerHTML = "Bättre lyss till den sträng som brast, än att aldrig ha spänt en ______";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
 			const input = lowerCaseInput();
-			return input.match(/båge/).length > 0;
-        }
+			return input.match(/båge/) != null;
+		}
 	},
 	{
 		generateText: function () {
-            document.getElementById("questionLabel").innerHTML = "En man kom in på en restaurang och sa endast en bokstav. Vad beställde han?";
-            document.getElementById("inputbox").setAttribute("type", "text");
-        },
-        validateAnswer: function () {
+			document.getElementById("questionLabel").innerHTML = "En man kom in på en restaurang och sa endast en bokstav. Vad beställde han?";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
 			const input = lowerCaseInput();
 			return input === "t";
-        }
+		}
 	},
-    {
-        generateText: function () {
+	{
+		generateText: function () {
 			//MUSIKKORSORD?
-            document.getElementById("questionLabel").innerHTML = "Just click next";
-            document.getElementById("inputbox").setAttribute("type", "text");
-        },
-        validateAnswer: function () {
+			document.getElementById("questionLabel").innerHTML = "Just click next";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
 			const input = lowerCaseInput();
-            return true;
-        }
-    },
-    {
-        generateText: function () {
-            document.getElementById("questionLabel").innerHTML = "I vilket landskap ligger Kopparbo?";
-            document.getElementById("inputbox").setAttribute("type", "text");
-        },
-        validateAnswer: function () {
+			return true;
+		}
+	},
+	{
+		generateText: function () {
+			document.getElementById("questionLabel").innerHTML = "I vilket landskap ligger Kopparbo?";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
 			const input = lowerCaseInput();
-            return input.match(/dalarna/).length > 0;
-        }
-    },
-    {
-        generateText: function () {
-            document.getElementById("questionLabel").innerHTML = "Vilken är näst den vanligaste bokstaven i svenska språket?";
-            document.getElementById("inputbox").setAttribute("type", "text");
-        },
-        validateAnswer: function () {
+			return input.match(/dalarna/) != null;
+		}
+	},
+	{
+		generateText: function () {
+			document.getElementById("questionLabel").innerHTML = "Vilken är näst den vanligaste bokstaven i svenska språket?";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
 			const input = lowerCaseInput();
-            return input === "a";
-        }
-    },
+			return input === "a";
+		}
+	},
 	{
 		generateText: function () {
 			document.getElementById("questionLabel").innerHTML = "<audio controls><source src='assets/morseUtmanare.wav' type='audio/wav'>Your browser does not support the audio element.<br>Does any modern browser not support audio? Kom igen, det är 2019!</audio>";
@@ -212,8 +212,21 @@ const questions = [
 		validateAnswer: function () {
 			const input = lowerCaseInput();
 			return input === "var uppmärksam på vad som händer" || input === "var uppmarksam pa vad som hander";
-		},
+		}
 	},
+	{
+		generateText: function () {
+            document.getElementById("questionLabel").innerHTML = "Vilken fär får man av att blanda gult och rött";
+            document.getElementById("inputbox").setAttribute("type", "text");
+        },
+        validateAnswer: function () {
+			const input = lowerCaseInput();
+            return input.match(/orange/) != null;
+        }
+	},
+	{
+		
+	}
 ];
 
 /*
