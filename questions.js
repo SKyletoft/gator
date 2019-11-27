@@ -1,6 +1,12 @@
 const hiddenSentence = "59°58'57.8\"N_15°26'50.2\"E";
 const questionsByGroup = [0,0,0,14];
 const startingQuestionByGroup = [0,0,0,0];
+const questionOrder = [
+	[],
+	[],
+	[],
+	[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13]
+];
 
 const questions = [
 	{
@@ -11,8 +17,7 @@ const questions = [
 		validateAnswer: function () {
 			const input = lowerCaseInput();
 			return input.match(/lila/) != null;
-		},
-		nextQuestion: 1
+		}
 	},
 	{
 		generateText: function () {
@@ -22,8 +27,7 @@ const questions = [
 		validateAnswer: function () {
 			const input = lowerCaseInput();
 			return input.match(/24/) != null;
-		},
-		nextQuestion: 2
+		}
 	},
 	{
 		generateText: function () {
@@ -31,8 +35,7 @@ const questions = [
 		},
 		validateAnswer: function () {
 			return true;
-		},
-		nextQuestion: 3
+		}
 	},
 	{
 		generateText: function () {
@@ -44,8 +47,7 @@ const questions = [
 			let text = lowerCaseInput();
 			text = text.substr(text.length - 4);
 			return imageformats.includes(text);
-		},
-		nextQuestion: 4
+		}
 	},
 	{
 		generateText: function () {
@@ -71,8 +73,7 @@ const questions = [
 				}
 			}
 			return true;
-		},
-		nextQuestion: 5
+		}
 	},
 	{
 		generateText: function () {
@@ -82,8 +83,7 @@ const questions = [
 		validateAnswer: function () {
 			const input = lowerCaseInput();
 			return input === "250" || input === "tvåhundrafemtio";
-		},
-		nextQuestion: 6
+		}
 	},
 	{
 		generateText: function () {
@@ -93,8 +93,7 @@ const questions = [
 		validateAnswer: function () {
 			const input = lowerCaseInput();
 			return input === "1983" || input === "nittonåttiotre";
-		},
-		nextQuestion: 7
+		}
 	},
 	{
 		generateText: function () {
@@ -120,8 +119,7 @@ const questions = [
 				}
 			});
 			return matches > 0;
-		},
-		nextQuestion: 8
+		}
 	},
 	{
 		generateText: function () {
@@ -133,30 +131,27 @@ const questions = [
 			let input = lowerCaseInput()
 			input = input.substr(input.length - 4);
 			return imageformats.includes(input);
+		}
+	},
+	{
+		generateText: function () {
+			document.getElementById("questionLabel").innerHTML = "Vad är det för symbol på taket av byggnaden 59°21’12.4”N 18°24’22.6”E";
+			document.getElementById("inputbox").setAttribute("type", "text");
 		},
-		nextQuestion: 9
+		validateAnswer: function () {
+				const input = lowerCaseInput();
+				return input.match(/triangel/).length > 0;
+		}
 	},
 	{
 		generateText: function () {
-            document.getElementById("questionLabel").innerHTML = "Vad är det för symbol på taket av byggnaden 59°21’12.4”N 18°24’22.6”E";
-            document.getElementById("inputbox").setAttribute("type", "text");
-        },
-        validateAnswer: function () {
-			const input = lowerCaseInput();
-			return input.match(/triangel/).length > 0;
-        },
-        nextQuestion: 10
-	},
-	{
-		generateText: function () {
-            document.getElementById("questionLabel").innerHTML = "Bättre lyss till den sträng som brast, än att aldrig ha spänt en ______";
-            document.getElementById("inputbox").setAttribute("type", "text");
+        		document.getElementById("questionLabel").innerHTML = "Bättre lyss till den sträng som brast, än att aldrig ha spänt en ______";
+        		document.getElementById("inputbox").setAttribute("type", "text");
         },
         validateAnswer: function () {
 			const input = lowerCaseInput();
 			return input.match(/båge/).length > 0;
-        },
-        nextQuestion: 11
+        }
 	},
 	{
 		generateText: function () {
@@ -166,8 +161,7 @@ const questions = [
         validateAnswer: function () {
 			const input = lowerCaseInput();
 			return input === "t";
-        },
-        nextQuestion: 13
+        }
 	},
     {
         generateText: function () {
@@ -178,8 +172,7 @@ const questions = [
         validateAnswer: function () {
 			const input = lowerCaseInput();
             return true;
-        },
-        nextQuestion: 13
+        }
     },
     {
         generateText: function () {
@@ -189,8 +182,7 @@ const questions = [
         validateAnswer: function () {
 			const input = lowerCaseInput();
             return input.match(/dalarna/).length > 0;
-        },
-        nextQuestion: 14
+        }
     },
     {
         generateText: function () {
@@ -200,8 +192,7 @@ const questions = [
         validateAnswer: function () {
 			const input = lowerCaseInput();
             return input === "a";
-        },
-        nextQuestion: 0
+        }
     }
 ];
 
@@ -215,8 +206,7 @@ TEMPLATE
         validateAnswer: function () {
 			const input = lowerCaseInput();
             return ();
-        },
-        nextQuestion: 0
+        }
     }
 */
 
