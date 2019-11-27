@@ -77,7 +77,7 @@ function endAnimation () {
 }
 
 function changeQuestion (steps) {
-	let currentQuestion = Math.min(questionOrder[group].indexOf(riddleNumber), 0);
+	let currentQuestion = Math.max(questionOrder[group].indexOf(riddleNumber), 0);
 	currentQuestion = (currentQuestion + steps + questionOrder[group].length) % questionOrder[group].length;
 	riddleNumber = questionOrder[group][currentQuestion]
     updatePage();
