@@ -48,9 +48,10 @@ function lowerCaseInput () {
 }
 
 function getSentenceSegment () {
-    const start = Math.round((riddleNumber - startingQuestionByGroup[group]) * (hiddenSentence.length / (1 + questionsByGroup[group])));
-    const end = Math.round((riddleNumber - startingQuestionByGroup[group] + 1) * (hiddenSentence.length / (1 + questionsByGroup[group])));
-    return hiddenSentence.substring(start, end);
+	const start = Math.round(riddleNumber / questionOrder[group].length * hiddenSentence.length);
+	const end   = Math.round((riddleNumber + 1) / questionOrder[group].length * hiddenSentence.length);
+	
+	return hiddenSentence.substring(start, end);
 }
 
 function checkAnswer () {
@@ -77,13 +78,12 @@ function endAnimation () {
 }
 
 function changeQuestion (steps) {
-	let currentQuestion = Math.max(questionOrder[group].indexOf(riddleNumber), 0);
-	currentQuestion = (currentQuestion + steps + questionOrder[group].length) % questionOrder[group].length;
-	riddleNumber = questionOrder[group][currentQuestion]
+	riddleNumber += steps + questionOrder[group].length;
+	riddleNumber %= questionOrder[group].length;
     updatePage();
 }
 
 function updatePage () {
     localStorage.riddleNumber = riddleNumber;
-    questions[riddleNumber].generateText();
+    questions[questionOrderGroup[riddleNumber]].generateText();
 }
