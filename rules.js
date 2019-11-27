@@ -57,8 +57,7 @@ function checkAnswer () {
     console.clear();
     if (questions[riddleNumber].validateAnswer()) {
         console.log("CORRECT!");
-        riddleNumber = questions[riddleNumber].nextQuestion;
-        updatePage();
+		changeQuestion(1);
         flashCharacter(getSentenceSegment(), 500);
         document.getElementById("inputbox").value = null;
     } else {
@@ -77,8 +76,10 @@ function endAnimation () {
     element.style.animationName = "success";
 }
 
-function goBack () {
-    riddleNumber = Math.max(0, riddleNumber - 1); //MAKE SURE THIS LOGIC STILL APPLIES WHEN ALL QUESTIONS ARE ADDED!
+function changeQuestion (steps) {
+	let currentQuestion = Math.min(questionOrder[group].indexOf(riddleNumber), 0);
+	currentQuestion = (currentQuestion + steps + questionOrder[group].length) % questionOrder[group].length;
+	riddleNumber = questionOrder[group][currentQuestion]
     updatePage();
 }
 
