@@ -42,8 +42,15 @@
                 </tr>
             </table>
         </div>
+        <button onclick="reset()">
+            Friendly enough RESET button
+        </button>
     </body>
 </html>
 <script>
+    function reset () {
+        localStorage.clear();
+        location.reload();
+    }
 init();
 </script>
