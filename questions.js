@@ -1,11 +1,21 @@
 const hiddenSentence = "59°58'57.8\"N_15°26'50.2\"E";
-const questionsByGroup = [0,0,0,14];
-const startingQuestionByGroup = [0,0,0,0];
 const questionOrder = [
 	[],
 	[],
 	[],
-	[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13]
+	[14, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13]
+];
+const questionsByGroup = [
+	questionOrder[0].length,
+	questionOrder[1].length,
+	questionOrder[2].length,
+	questionOrder[3].length
+];
+const startingQuestionByGroup = [
+	questionOrder[0][0],
+	questionOrder[1][0],
+	questionOrder[2][0],
+	questionOrder[3][0]
 ];
 
 const questions = [
@@ -193,7 +203,17 @@ const questions = [
 			const input = lowerCaseInput();
             return input === "a";
         }
-    }
+    },
+	{
+		generateText: function () {
+			document.getElementById("questionLabel").innerHTML = "<audio controls><source src='assets/morseUtmanare.wav' type='audio/wav'>Your browser does not support the audio element.<br>Does any modern browser not support audio? Kom igen, det är 2019!</audio>";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
+			const input = lowerCaseInput();
+			return input === "var uppmärksam på vad som händer" || input === "var uppmarksam pa vad som hander";
+		},
+	},
 ];
 
 /*
