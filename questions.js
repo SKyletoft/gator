@@ -67,7 +67,7 @@ const questions = [
 		validateAnswer: function () {
 			const ans = [
 				/äpp/,
-				/biggarå/,
+				/bigarrå/,
 				/körsbär/,
 				/päron/,
 				/plommon/
@@ -102,7 +102,7 @@ const questions = [
 		},
 		validateAnswer: function () {
 			const input = lowerCaseInput();
-			return input === "1983" || input === "nittonåttiotre";
+			return input === "1910" || input === "nittontio";
 		}
 	},
 	{
@@ -150,7 +150,7 @@ const questions = [
 		},
 		validateAnswer: function () {
 			const input = lowerCaseInput();
-			return input.match(/triangel/) != null;
+			return input.match(/triang/) != null;
 		}
 	},
 	{
@@ -242,46 +242,3 @@ TEMPLATE
         }
     }
 */
-
-const questionsOLD = [
-	{
-		generateText: function () {
-			document.getElementById("questionLabel").innerHTML = "Vad säger morsen?<br><audio controls><source src='assets/morse.wav' type='audio/wav'>Your browser does not support the audio element.</audio>";
-			document.getElementById("inputbox").setAttribute("type", "text");
-		},
-		validateAnswer: function () {
-			return document.getElementById("inputbox").value === "HEJ";
-		},
-		nextQuestion: 1
-	},
-	{
-		generateText: function () {
-			document.getElementById("questionLabel").innerText = "Ladda upp en bild!";
-			document.getElementById("inputbox").setAttribute("type", "file");
-		},
-		validateAnswer: function () {
-			const imageformats = [".png", ".jpg", "jpeg", ".gif", "tiff", ".bmp"]
-			let text = document.getElementById("inputbox").value.toString()
-			text = text.substr(text.length - 4);
-			console.log(text);
-			if (imageformats.indexOf(text) != -1) {
-				return true;
-			}
-			return false;
-		},
-		nextQuestion: 2
-	},
-	{
-		generateText: function () {
-			document.getElementById("questionLabel").innerHTML = "Hur många trianglar? (24st)<br><img src='https://1.bp.blogspot.com/-5xv6Cg1yhFo/VNLXEhuYiXI/AAAAAAAAAXw/dNgNTrE4G5M/s1600/image002.gif' width='250'/>";
-			document.getElementById("inputbox").setAttribute("type", "text");
-		},
-		validateAnswer: function () {
-			if (document.getElementById("inputbox").value === "24") {
-				return true;
-			}
-			return false;
-		},
-		nextQuestion: 0
-	}
-];
