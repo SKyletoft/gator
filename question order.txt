@@ -3,7 +3,7 @@ All questions
 
     annat ord för lila
     trianglar
-tändstickorna
+    tändstickorna
     patrullfoto
     löv
     2 * 250 / 2
@@ -18,13 +18,13 @@ tändstickorna
     kopparbo landskap
     morse
     gult/rött
-antal fyrkanter
-sockerkaka
+    antal fyrkanter
+    sockerkaka
 andra löv
-8 decimaler av pi
-14 målspår
-frukt och grönsakshandlaren
-dalarnas landskapsdjur
-e
-cesarchiffer
-gul/blå
+    8 decimaler av pi
+    14 målspår
+    frukt och grönsakshandlaren
+    dalarnas landskapsdjur
+    e
+    cesarchiffer
+    gul/blå

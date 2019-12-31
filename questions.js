@@ -41,10 +41,11 @@ const questions = [
 	},
 	{
 		generateText: function () {
-			document.getElementById("questionLabel").innerHTML = "Ursäkta, va? \"Flytta tändstickor\". Whatever that means";
+			document.getElementById("questionLabel").innerHTML = "<img src=\"assets/car number.png\"/>>";
 		},
 		validateAnswer: function () {
-			return true;
+			const input = lowerCaseInput();
+			return input.match(/87/) != null;
 		}
 	},
 	{
@@ -216,29 +217,186 @@ const questions = [
 	},
 	{
 		generateText: function () {
-            document.getElementById("questionLabel").innerHTML = "Vilken fär får man av att blanda gult och rött";
-            document.getElementById("inputbox").setAttribute("type", "text");
-        },
-        validateAnswer: function () {
+			document.getElementById("questionLabel").innerHTML = "Vilken fär får man av att blanda gult och rött";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
 			const input = lowerCaseInput();
-            return input.match(/orange/) != null;
-        }
+			return input.match(/orange/) != null;
+		}
 	},
 	{
-		
+		generateText: function () {
+			document.getElementById("questionLabel").innerHTML = "Hur många kvadrater?<br><img src='http://2.bp.blogspot.com/-ipkpMJ-_SiI/T_VfNdX_1TI/AAAAAAAABHY/v6MXamdWSjY/s1600/Squares+Puzzle+-+Asadkhan101.jpg' width='250'/>"
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
+			const input = lowerCaseInput();
+			return input.match(/36/) != null;
+		}
+	},
+	{
+		generateText: function () {
+			document.getElementById("questionLabel").innerText = "Baka en sockerkaka till era ledare och ladda upp ett foto";
+			document.getElementById("inputbox").setAttribute("type", "file");
+		},
+		validateAnswer: function () {
+			const imageformats = [".png", ".jpg", "jpeg", ".gif", "tiff", ".bmp"]
+			let input = lowerCaseInput()
+			input = input.substr(input.length - 4);
+			return imageformats.includes(input);
+		}
+	},
+	{
+		//löv
+	},
+	{
+		generateText: function () {
+			document.getElementById("questionLabel").innerHTML = "Vad är PIs första åtta decimaler?";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
+			const input = lowerCaseInput();
+			const piString = Math.PI.toString().substr(2, input.length);
+			return input === piString;
+		}
+	},
+	{
+		//Easily exploitable, I know
+		generateText: function () {
+			document.getElementById("questionLabel").innerHTML = "Skriv en scoutlag";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
+			const input = lowerCaseInput();
+			const laws = [
+				/ta hand om sin kropp/,
+				/fysiska utmaningar/,
+				/förståelse för omvärlden/,
+				/känsla för naturen/,
+				/aktiv i samhället/,
+				/relationer/,
+				/aktiv i gruppen/,
+				/ledarskap/,
+				/problemlösning/,
+				/fantasi och kreativt uttryck/,
+				/kritiskt tänkande/,
+				/egna värderingar/,
+				/existens/,
+				/självinsikt och självkänsla/
+			];
+			let matches = 0;
+			laws.forEach((law) => {
+				if (input.match(law)) {
+					matches++;
+				}
+			});
+			return matches == laws.length;
+		}
+	},
+	{
+		generateText: function () {
+			document.getElementById("questionLabel").innerHTML = "En frukt- och grönsakshandlare är 54 år gammal, 175 cm lång och har 43 i skonummer? Vad väger han?";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
+			const input = lowerCaseInput();
+			const laws = [
+				/frukt/,
+				/grönt/,
+				/grönsak/
+			];
+			let matches = 0;
+			laws.forEach((law) => {
+				if (input.match(law)) {
+					matches++;
+				}
+			});
+			return matches == laws.length;
+		}
+	},
+	{
+		generateText: function () {
+			document.getElementById("questionLabel").innerHTML = "Vad är Dalarnas landskapsdjur?";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
+			const input = lowerCaseInput();
+			return input.match(/berguv/) != null;
+		}
+	},
+	{
+		generateText: function () {
+			document.getElementById("questionLabel").innerHTML = "Vad är Dalarnas landskapblomma?";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
+			const input = lowerCaseInput();
+			return input.match(/blåklocka/) != null;
+		}
+	},
+	{
+		generateText: function () {
+			document.getElementById("questionLabel").innerHTML = "Vad är svenskans vanligaste bokstav?";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
+			const input = lowerCaseInput();
+			return input.match(/e/) != null;
+		}
+	},
+	{
+		generateText: function () {
+			document.getElementById("questionLabel").innerHTML = "Vad är svenskans vanligaste bokstav?";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
+			const input = lowerCaseInput();
+			return input.match(/e/) != null;
+		}
+	},
+	{
+		generateText: function () {
+			document.getElementById("questionLabel").innerHTML = "ydu xsspbunvdp sa doow";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
+			const input = lowerCaseInput();
+			return input.match(/var uppmärksam på allt/) != null;
+		}
+	},
+	{
+		generateText: function () {
+			document.getElementById("questionLabel").innerHTML = "Vad får du om du blandar gul och blå?";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
+			const input = lowerCaseInput();
+			return input.match(/grön/) != null;
+		}
+	},
+	{
+		generateText: function () {
+			document.getElementById("questionLabel").innerHTML = "Från vilken del av Polen kommer Jultomten?";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
+			const input = lowerCaseInput();
+			return input.match(/nor/) != null;
+		}
 	}
 ];
 
 /*
 TEMPLATE
-    {
-        generateText: function () {
-            document.getElementById("questionLabel").innerHTML = "";
-            document.getElementById("inputbox").setAttribute("type", "text");
-        },
-        validateAnswer: function () {
+	{
+		generateText: function () {
+			document.getElementById("questionLabel").innerHTML = "";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
 			const input = lowerCaseInput();
-            return ();
-        }
-    }
+			return ();
+		}
+	}
 */
