@@ -1,4 +1,9 @@
-const hiddenSentence = "59°58'57.8\"N_15°26'50.2\"E";
+const hiddenSentence = [
+	"Koordinater saknas fortfarande, tyvärr",
+	"Koordinater saknas fortfarande, tyvärr",
+	"Koordinater saknas fortfarande, tyvärr",
+	"59°58'57.8\"N_15°26'50.2\"E"
+];
 const questionOrder = [
 	[34, 30, 17, 35, 18, null, 31, 6, 32, 8, 9, 10, 33, 12, 19, 26],
 	[27, 28, 17, 36, 18, null, 21, 6, 22, 8, 9, 10, 29, 12, 25, 26],
@@ -35,7 +40,7 @@ const questions = [
 	},
 	{ // 2
 		generateText: function () {
-			document.getElementById("questionLabel").innerHTML = "<img src=\"assets/car number.png\"/>>";
+			document.getElementById("questionLabel").innerHTML = "<img src=\"assets/car number.png\"/>";
 		},
 		validateAnswer: function () {
 			const input = lowerCaseInput();

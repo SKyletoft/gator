@@ -48,10 +48,10 @@ function lowerCaseInput () {
 }
 
 function getSentenceSegment () {
-	const start = Math.round(riddleNumber / questionOrder[group].length * hiddenSentence.length);
-	const end   = Math.round((riddleNumber + 1) / questionOrder[group].length * hiddenSentence.length);
+	const start = Math.round(riddleNumber / questionOrder[group].length * hiddenSentence[group].length);
+	const end   = Math.round((riddleNumber + 1) / questionOrder[group].length * hiddenSentence[group].length);
 	
-	return hiddenSentence.substring(start, end);
+	return hiddenSentence[group].substring(start, end);
 }
 
 function checkAnswer () {
