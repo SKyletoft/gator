@@ -8,7 +8,7 @@ const questionOrder = [
 	[34, 30, 17, 35, 18, null, 31, 6, 32, 8, 9, 10, 33, 12, 19, 26],
 	[27, 28, 17, 36, 18, null, 21, 6, 22, 8, 9, 10, 29, 12, 25, 26],
 	[15, 16, 17, 37, 18, null, 21, 6, 22, 8, 9, 10, 23, 12, 24, 14],
-	[15, 0, 1, 2, 3, null, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+	[15, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
 ];
 const questionsByGroup = [
 	questionOrder[0].length,
@@ -175,13 +175,12 @@ const questions = [
 	},
 	{ // 12
 		generateText: function () {
-			//MUSIKKORSORD?
-			document.getElementById("questionLabel").innerHTML = "Just click next";
+			document.getElementById("questionLabel").innerHTML = "Bilda ett ord av de bokstäverna som hamnar i de blåa rutorna<br/><a href=\"assets/musikkorsord.xlsx\">Korsord [Excel-fil]</a>";
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
 			const input = lowerCaseInput();
-			return true;
+			return input.match(/kluringar/) != null;
 		}
 	},
 	{ // 13
