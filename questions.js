@@ -5,9 +5,9 @@ const hiddenSentence = [
 	"59°58'57.8\"N_15°26'50.2\"E"
 ];
 const questionOrder = [
-	[34, 30, 17, 35, 18, null, 31, 6, 32, 8, 9, 10, 33, 12, 19, 26],
-	[27, 28, 17, 36, 18, null, 21, 6, 22, 8, 9, 10, 29, 12, 25, 26],
-	[15, 16, 17, 37, 18, null, 21, 6, 22, 8, 9, 10, 23, 12, 24, 14],
+	[34, 30, 17, 35, 18, 40, 31, 6, 32, 8, 9, 10, 33, 12, 19, 26],
+	[27, 28, 17, 36, 18, 39, 21, 6, 22, 8, 9, 10, 29, 12, 25, 26],
+	[15, 16, 17, 37, 18, 38, 21, 6, 22, 8, 9, 10, 23, 12, 24, 14],
 	[15, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
 ];
 const questionsByGroup = [
@@ -66,17 +66,15 @@ const questions = [
 		},
 		validateAnswer: function () {
 			const ans = [
-				/äpp/,
-				/bigarrå/,
 				/körsbär/,
-				/päron/,
-				/plommon/
+				/äpp/,
+				/päron/
 			];
 			const input = lowerCaseInput().split(" ");
 			if (input.length != ans.length) {
 				return false;
 			}
-			for (let i = 0; i < 5; i++) {
+			for (let i = 0; i < 3; i++) {
 				if (input[i].match(ans[i]) === null) {
 					console.log("failed at ", i);
 					return false;
@@ -466,7 +464,97 @@ const questions = [
 				input.match(/ s/) != null ||
 				input.match(/"s"/) != null;
 		}
-	}
+	},
+	{ // 38
+		generateText: function () {
+			document.getElementById("questionLabel").innerHTML = "Identifiera följande löv<br/><img src=\"assets/blad/anventyrare.png\" id=\"leaves\"/>";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
+			const ans = [
+				/ek/,
+				/ask/,
+				/lönn/,
+				/bok/,
+				/björk/,
+				/al/,
+				/rönn/
+			];
+			const input = lowerCaseInput().split(" ");
+			if (input.length != ans.length) {
+				return false;
+			}
+			for (let i = 0; i < ans.length; i++) {
+				if (input[i].match(ans[i]) === null) {
+					console.log("failed at ", i);
+					return false;
+				}
+			}
+			return true;
+		}
+	},
+	{ // 39
+		generateText: function () {
+			document.getElementById("questionLabel").innerHTML = "Identifiera följande löv<br/><img src=\"assets/blad/upptackare.png\" id=\"leaves\"/>";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
+			const ans = [
+				/näckros/,
+				/linnea/,
+				/skogsstjärna/,
+				/liljekonvalj/,
+				/förgätmigej/,
+				/styvmorsviol/,
+				/gullviva/,
+				/blåklint/,
+				/blåklocka/
+			];
+			const input = lowerCaseInput().split(" ");
+			if (input.length != ans.length) {
+				return false;
+			}
+			for (let i = 0; i < ans.length; i++) {
+				if (input[i].match(ans[i]) === null) {
+					console.log("failed at ", i);
+					return false;
+				}
+			}
+			return true;
+		}
+	},
+	{ // 40
+		generateText: function () {
+			document.getElementById("questionLabel").innerHTML = "Identifiera följande löv<br/><img src=\"assets/blad/sparare.png\" id=\"leaves\"/>";
+			document.getElementById("inputbox").setAttribute("type", "text");
+		},
+		validateAnswer: function () {
+			const ans = [
+				/maskros/,
+				/blåklocka/,
+				/prästkrage/,
+				/vitsippa/,
+				/blåsippa/,
+				/smörblomma/,
+				/näckros/,
+				/skogsstjärna/,
+				/gullviva/,
+				/blålinkt/,
+				/liljekonvalj/
+			];
+			const input = lowerCaseInput().split(" ");
+			if (input.length != ans.length) {
+				return false;
+			}
+			for (let i = 0; i < ans.length; i++) {
+				if (input[i].match(ans[i]) === null) {
+					console.log("failed at ", i);
+					return false;
+				}
+			}
+			return true;
+		}
+	},
 ];
 
 /*
