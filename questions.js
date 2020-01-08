@@ -1,7 +1,7 @@
 const hiddenSentence = [
-	"Koordinater saknas fortfarande, tyvärr",
-	"Koordinater saknas fortfarande, tyvärr",
-	"Koordinater saknas fortfarande, tyvärr",
+	"59°58'44.5\"N_15°26'35.2\"E",
+	"59°58'27.3\"N_15°27'19.1\"E",
+	"59°58'51.5\"N_15°27'7.1\"E",
 	"59°58'57.8\"N_15°26'50.2\"E"
 ];
 const questionOrder = [
