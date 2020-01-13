@@ -212,7 +212,8 @@ const questions = [
 		},
 		validateAnswer: function () {
 			const input = lowerCaseInput();
-			return input.match(/orange/) != null;
+			return input.match(/orange/) != null ||
+				input.match(/brandgul/) != null;
 		}
 	},
 	{ // 17
