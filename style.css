@@ -49,6 +49,9 @@ button {
 #charFlashDiv {
     font-size: 500px;
 }
+i {
+    font-size: 30px;
+}
 @media screen and (max-width: 1000px) {
     #centredbody {
         font-size: 500%;
