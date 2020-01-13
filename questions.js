@@ -463,7 +463,7 @@ const questions = [
 	},
 	{ // 38
 		generateText: function () {
-			document.getElementById("questionLabel").innerHTML = "Identifiera följande löv<br><br><i>Var noga med stavningen</i><i>(Träd1, träd2, träd3...)</i><br/><img src=\"assets/blad/anventyrare.png\" id=\"leaves\"/>";
+			document.getElementById("questionLabel").innerHTML = "Identifiera följande löv<br><br><i>Var noga med stavningen</i><i>(Träd1, träd2, träd3...)</i><br/><img src=\"assets/blad/aventyrare.png\" id=\"leaves\"/>";
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
