@@ -525,7 +525,7 @@ const questions = [
 	},
 	{ // 40
 		generateText: function () {
-			document.getElementById("questionLabel").innerHTML = "Identifiera följande löv<br/><img src=\"assets/blad/sparare.png\" id=\"leaves\"/>";
+			document.getElementById("questionLabel").innerHTML = "Identifiera följande blommor<br/><img src=\"assets/blad/sparare.png\" id=\"leaves\"/>";
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
@@ -533,13 +533,12 @@ const questions = [
 				/maskros/,
 				/blåklocka/,
 				/prästkrage/,
-				/vitsippa/,
 				/blåsippa/,
 				/smörblomma/,
 				/näckros/,
 				/skogsstjärna/,
 				/gullviva/,
-				/blålinkt/,
+				/blåklint/,
 				/liljekonvalj/
 			];
 			const input = lowerCaseInput().split(" ");

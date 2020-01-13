@@ -4,6 +4,7 @@ let group = 3; //0: spårare, 1: upptäckare, 2: äventyrare, 3: utmanare
 function init () {
     if (localStorage.riddleNumber !== undefined) {
         riddleNumber = parseInt(localStorage.riddleNumber);
+        group = parseInt(localStorage.group);
         document.getElementById("centredbody").style.display = "";
         document.getElementById("initialSetupDiv").style.display = "None";
     } else {
