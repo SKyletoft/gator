@@ -99,7 +99,7 @@ const questions = [
 	},
 	{ // 7
 		generateText: function () {
-			document.getElementById("questionLabel").innerHTML = "Skriv en scoutlag";
+			document.getElementById("questionLabel").innerHTML = "Skriv en scoutlag<br><i>Var noga med stavningen</i>";
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
@@ -265,7 +265,7 @@ const questions = [
 	},
 	{ // 22
 		generateText: function () {
-			document.getElementById("questionLabel").innerHTML = "Vilka är de 14 målspåren?";
+			document.getElementById("questionLabel").innerHTML = "Vilka är de 14 målspåren?<br><i>Var noga med stavningen</i>";
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
@@ -290,6 +290,8 @@ const questions = [
 			laws.forEach((law) => {
 				if (input.match(law)) {
 					matches++;
+				} else {
+					console.log("failed: " + law.toString());
 				}
 			});
 			return matches == laws.length;
@@ -461,7 +463,7 @@ const questions = [
 	},
 	{ // 38
 		generateText: function () {
-			document.getElementById("questionLabel").innerHTML = "Identifiera följande löv<br><i>(Träd1, träd2, träd3...)</i><br/><img src=\"assets/blad/anventyrare.png\" id=\"leaves\"/>";
+			document.getElementById("questionLabel").innerHTML = "Identifiera följande löv<br><br><i>Var noga med stavningen</i><i>(Träd1, träd2, träd3...)</i><br/><img src=\"assets/blad/anventyrare.png\" id=\"leaves\"/>";
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
@@ -489,7 +491,7 @@ const questions = [
 	},
 	{ // 39
 		generateText: function () {
-			document.getElementById("questionLabel").innerHTML = "Namnge blommorna i följande ordning:<br><i>(Blomma1, blomma2, blomma3...)</i><br/><img src=\"assets/blad/upptackare.png\" id=\"leaves\"/>";
+			document.getElementById("questionLabel").innerHTML = "Namnge blommorna i följande ordning:<br><i>Var noga med stavningen</i><br><i>(Blomma1, blomma2, blomma3...)</i><br/><img src=\"assets/blad/upptackare.png\" id=\"leaves\"/>";
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
@@ -524,7 +526,7 @@ const questions = [
 	},
 	{ // 40
 		generateText: function () {
-			document.getElementById("questionLabel").innerHTML = "Identifiera följande blommor i rätt ordning<br><i>(Blomma1, blomma2, blomma3...)</i><br/><img src=\"assets/blad/sparare.png\" id=\"leaves\"/>";
+			document.getElementById("questionLabel").innerHTML = "Identifiera följande blommor i rätt ordning<br><i>Var noga med stavningen</i><br><i>(Blomma1, blomma2, blomma3...)</i><br/><img src=\"assets/blad/sparare.png\" id=\"leaves\"/>";
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {

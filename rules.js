@@ -56,7 +56,7 @@ function getSentenceSegment() {
 }
 
 function checkAnswer() {
-    //console.clear();
+    console.clear();
     if (questions[questionOrder[group][riddleNumber]].validateAnswer()) {
         console.log("CORRECT!");
         flashCharacter(getSentenceSegment(), 500);
@@ -107,9 +107,6 @@ document.addEventListener("keydown", key => {
             break;
         case "ArrowRight":
             changeQuestion(1);
-            break;
-        default:
-            console.log("Pressed other key: " + key.key);
             break;
     };
 });
