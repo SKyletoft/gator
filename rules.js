@@ -1,7 +1,7 @@
 let riddleNumber = 0;
 let group = 3; //0: spårare, 1: upptäckare, 2: äventyrare, 3: utmanare
 
-function init () {
+function init() {
     if (localStorage.riddleNumber !== undefined) {
         riddleNumber = parseInt(localStorage.riddleNumber);
         group = parseInt(localStorage.group);
@@ -15,7 +15,7 @@ function init () {
     questions[questionOrder[group][riddleNumber]].generateText();
 }
 
-function start (selection) {
+function start(selection) {
     group = selection;
     riddleNumber = 0;
     localStorage.riddleNumber = riddleNumber;
@@ -23,23 +23,23 @@ function start (selection) {
     init();
 }
 
-function flashCharacter (char, delay) {
+function flashCharacter(char, delay) {
     document.getElementById("charFlashDiv").innerHTML = char;
     show();
     setTimeout(hide, delay);
 }
 
-function show () {
+function show() {
     document.getElementById("charFlashDiv").style.display = "";
     document.getElementById("centredbody").style.display = "None";
 }
 
-function hide () {
+function hide() {
     document.getElementById("charFlashDiv").style.display = "None";
     document.getElementById("centredbody").style.display = "";
 }
 
-function lowerCaseInput () {
+function lowerCaseInput() {
     return (
         document.getElementById("inputbox")
             .value
@@ -48,19 +48,19 @@ function lowerCaseInput () {
     );
 }
 
-function getSentenceSegment () {
-	const start = Math.round(riddleNumber / questionOrder[group].length * hiddenSentence[group].length);
-	const end   = Math.round((riddleNumber + 1) / questionOrder[group].length * hiddenSentence[group].length);
-	
-	return hiddenSentence[group].substring(start, end);
+function getSentenceSegment() {
+    const start = Math.round(riddleNumber / questionOrder[group].length * hiddenSentence[group].length);
+    const end = Math.round((riddleNumber + 1) / questionOrder[group].length * hiddenSentence[group].length);
+
+    return hiddenSentence[group].substring(start, end);
 }
 
-function checkAnswer () {
+function checkAnswer() {
     console.clear();
     if (questions[questionOrder[group][riddleNumber]].validateAnswer()) {
         console.log("CORRECT!");
         flashCharacter(getSentenceSegment(), 500);
-		changeQuestion(1);
+        changeQuestion(1);
         document.getElementById("inputbox").value = null;
     } else {
         console.log("FALSE");
@@ -70,7 +70,7 @@ function checkAnswer () {
     }
 }
 
-function endAnimation () {
+function endAnimation() {
     let element = document.getElementById("centredbody");
     element.style.animationDelay = "0s";
     element.style.animationPlayState = "paused";
@@ -78,16 +78,21 @@ function endAnimation () {
     element.style.animationName = "success";
 }
 
-function changeQuestion (steps) {
+function changeQuestion(steps) {
     let newNumber = riddleNumber;
-	newNumber += steps + questionOrder[group].length;
+    newNumber += steps + questionOrder[group].length;
     newNumber %= questionOrder[group].length;
-    console.log(riddleNumber, "=>", newNumber);
+    console.log(riddleNumber + " => " + newNumber);
     riddleNumber = newNumber;
     updatePage();
 }
 
-function updatePage () {
+function updatePage() {
     localStorage.riddleNumber = riddleNumber;
     questions[questionOrder[group][riddleNumber]].generateText();
+}
+
+function reset () {
+    localStorage.clear();
+    location.reload();
 }

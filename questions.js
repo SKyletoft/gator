@@ -10,12 +10,6 @@ const questionOrder = [
 	[15, 16, 17, 37, 18, 38, 21, 6, 22, 8, 9, 10, 23, 12, 24, 14],
 	[15, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
 ];
-const questionsByGroup = [
-	questionOrder[0].length,
-	questionOrder[1].length,
-	questionOrder[2].length,
-	questionOrder[3].length
-];
 
 const questions = [
 	{ // 0
