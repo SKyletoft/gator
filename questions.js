@@ -315,7 +315,7 @@ const questions = [
 					matches++;
 				}
 			});
-			return matches == laws.length;
+			return matches > 0;
 		}
 	},
 	{ // 24
