@@ -137,7 +137,7 @@ const questions = [
 	},
 	{ // 9
 		generateText: function () {
-			document.getElementById("questionLabel").innerHTML = "Vad är det för symbol på taket av byggnaden 59°21’12.4”N 18°24’22.6”E";
+			document.getElementById("questionLabel").innerHTML = "Vad är det för symbol på taket av byggnaden 59°21’12.4”N 18°24’22.6”E?";
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
@@ -207,7 +207,7 @@ const questions = [
 	},
 	{ // 16
 		generateText: function () {
-			document.getElementById("questionLabel").innerHTML = "Vilken fär får man av att blanda gult och rött";
+			document.getElementById("questionLabel").innerHTML = "Vilken färg får man av att blanda gult och rött?";
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
@@ -307,7 +307,8 @@ const questions = [
 			const laws = [
 				/frukt/,
 				/grönt/,
-				/grönsak/
+				/grönsak/,
+				/78.3 kg/
 			];
 			let matches = 0;
 			laws.forEach((law) => {
@@ -450,15 +451,24 @@ const questions = [
 	},
 	{ // 37
 		generateText: function () {
-			document.getElementById("questionLabel").innerHTML = "<img src='https://www.humorbibeln.se/wp-content/uploads/sites/4/2019/10/visning9mistag.jpg' />";
+			document.getElementById("questionLabel").innerHTML = "<img src='https://www.humorbibeln.se/wp-content/uploads/sites/4/2019/10/visning9mistag.jpg' width='80%'/>";
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
 			const input = lowerCaseInput();
-			return input.match(/mistaget/) != null ||
-				input.match(/misstaget/) != null ||
-				input.match(/ s/) != null ||
-				input.match(/"s"/) != null;
+			const laws = [
+				/mistaget/,
+				/misstaget/,
+				/ s/,
+				/"s"/
+			];
+			let matches = 0;
+			laws.forEach((law) => {
+				if (input.match(law)) {
+					matches++;
+				}
+			});
+			return matches > 0;
 		}
 	},
 	{ // 38
