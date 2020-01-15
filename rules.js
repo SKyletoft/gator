@@ -7,10 +7,12 @@ function init() {
         group = parseInt(localStorage.group);
         document.getElementById("centredbody").style.display = "";
         document.getElementById("initialSetupDiv").style.display = "None";
+        console.log("Welcome back, I guess...");
     } else {
         document.getElementById("centredbody").style.display = "None";
         document.getElementById("initialSetupDiv").style.display = "";
     }
+    console.log("But c'mon, google it instead of looking at the source code or console.\nDon't be boring!");
     document.getElementById("charFlashDiv").style.display = "None";
     questions[questionOrder[group][riddleNumber]].generateText();
 }
