@@ -64,6 +64,9 @@ i {
         height: 2cm;
         font-size: xx-large;
     }
+    #reset {
+        font-size: xx-large;
+    }
 }
 @keyframes fail {
     0% {
