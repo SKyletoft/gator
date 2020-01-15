@@ -35,3 +35,12 @@ function startChat() {
         }
     }, 500);
 }
+
+console.log(new Date().toLocaleTimeString());
+
+let x = [1,2,3,4,5];
+console.log(x);
+console.log(x[2]);
+x[2] = 7;
+console.log(x[2]);
+console.log(x);
