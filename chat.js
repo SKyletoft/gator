@@ -8,17 +8,12 @@ const chat = [
     "[undefined] It was in",
     "null has joined the chat",
     "[null] Hi!",
-    "[undefined] Never mind then"
+    "[undefined] Never mind then...",
+    "undefined has left the chat",
+    "you have been disconnected"
 ];
 const delays = [
-    0,
-    2000,
-    5000,
-    1000,
-    10000,
-    2000,
-    3000,
-    4000
+    0, 2, 5, 1, 10, 2, 3, 4
 ];
 
 let index = 0;
@@ -26,7 +21,7 @@ let latestmessage;
 
 function printChat () {
     let d = new Date();
-    console.log(d.getHours() + ":" + d.getMinutes() + " " + chat[index]);
+    console.log(d.toLocaleTimeString() + " " + chat[index]);
     index++;
 }
 
@@ -34,7 +29,7 @@ function startChat() {
     index = 0;
     latestmessage = Date.now();
     setInterval(() => {
-        if (Date.now() > latestmessage + delays[index]) {
+        if (Date.now() > latestmessage + delays[index] * 1000) {
             printChat();
             latestmessage = Date.now();
         }
