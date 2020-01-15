@@ -13,7 +13,7 @@ const chat = [
     "you have been disconnected"
 ];
 const delays = [
-    0, 2, 5, 1, 10, 2, 3, 4
+    0, 2, 5, 1, 10, 2, 3, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
 ];
 
 let index = 0;
