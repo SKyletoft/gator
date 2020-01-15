@@ -17,7 +17,6 @@ const delays = [
 ];
 
 let index = 0;
-let latestmessage;
 
 function printChat () {
     let d = new Date();
@@ -27,7 +26,7 @@ function printChat () {
 
 function startChat() {
     index = 0;
-    latestmessage = Date.now();
+    let latestmessage = Date.now();
     setInterval(() => {
         if (Date.now() > latestmessage + delays[index] * 1000) {
             printChat();
@@ -35,12 +34,3 @@ function startChat() {
         }
     }, 500);
 }
-
-console.log(new Date().toLocaleTimeString());
-
-let x = [1,2,3,4,5];
-console.log(x);
-console.log(x[2]);
-x[2] = 7;
-console.log(x[2]);
-console.log(x);
