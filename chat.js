@@ -51,10 +51,11 @@ function startChat() {
     //index = 0;
     let latestmessage = Date.now();
     setInterval(() => {
-        if (Date.now() > latestmessage + (delays[index] + Math.random()) * 1000 && !ended) {
+        if (Date.now() > latestmessage + delays[index] * 1000 && !ended) {
             printChat();
-            latestmessage = Date.now();
-        } else if (index >= chat.length) {
+            latestmessage = Date.now() - Math.random() * 1000;
+        }
+        if (index >= chat.length) {
             ended = true;
             clearInterval();
         }
