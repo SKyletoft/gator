@@ -20,7 +20,7 @@ let index = 0;
 
 function printChat () {
     let d = new Date();
-    console.log(d.toLocaleTimeString() + " " + chat[index]);
+    document.getElementById("chatbox").innerHTML += (d.toLocaleTimeString() + " " + chat[index] + "<br>");
     index++;
 }
 

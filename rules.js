@@ -12,6 +12,7 @@ function init() {
         document.getElementById("centredbody").style.display = "None";
         document.getElementById("initialSetupDiv").style.display = "";
     }
+    document.getElementById("chatbox").style.display = "None";
     console.log("But c'mon, google it instead of looking at the source code or console.\nDon't be boring!");
     document.getElementById("charFlashDiv").style.display = "None";
     questions[questionOrder[group][riddleNumber]].generateText();
@@ -109,6 +110,11 @@ document.addEventListener("keydown", key => {
             break;
         case "ArrowRight":
             changeQuestion(1);
+            break;
+        case "§":
+        case "F12":
+            document.getElementById("chatbox").style.display = "";
+            startChat();
             break;
     };
 });
