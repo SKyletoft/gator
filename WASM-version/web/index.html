@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		§ to open
+	</title>
+	<link rel="stylesheet" href="style.css" />
+	<script type="module" src="index.js"></script>
+	<script src="rules.js"></script>
+</head>
+
+<body>
+	<div id="charFlashDiv">
+		WORD
+	</div>
+	<div id="centredbody">
+		<label id="questionLabel">
+			{QUESTION}
+		</label><br>
+		<input id="inputbox" type="text" /><br>
+		<button id="okbutton" onclick="checkAnswer()">
+			Svara
+		</button>
+		<button id="backbutton" onclick="changeQuestion(-1)">
+			Backa
+		</button>
+		<br><br>
+		<button id="reset" onclick="reset()">
+			Backa till startsidan
+		</button>
+	</div>
+	<div id="initialSetupDiv">
+		<h1>Välkommen!</h1>
+		<table>
+			<tr>
+				<td onclick="start(0)">
+					<img src="assets/alder-sparare.png" />
+				</td>
+				<td onclick="start(1)">
+					<img src="assets/alder-upptackare.png" />
+				</td>
+				<td onclick="start(2)">
+					<img src="assets/alder-aventyrare.png" />
+				</td>
+				<td onclick="start(3)">
+					<img src="assets/alder-utmanare.png" />
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="chatbox"></div>
+</body>
+
+</html>
+<script>
+    rulesInit();
+</script>

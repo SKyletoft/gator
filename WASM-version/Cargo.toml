@@ -1,0 +1,11 @@
+[package]
+name = "dalacamp_9_gator_wasm"
+version = "0.1.0"
+authors = ["Samuel Kyletoft <samuel@kyletoft.se>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
