@@ -69,7 +69,7 @@ const QUESTIONORDER: [[usize; 16]; 4] = [
 	[15, 0,  1,  2,  3,  4,  5,  6,  7, 8, 9, 10, 11, 12, 13, 14],
 ];
 
-const QUESTIONS: [[&str; 2]; 39] = [
+const QUESTIONS: [[&str; 2]; 40] = [
 	["Vad är ett annat ord för gredelin?", "text"],
 	["Hur många trianglar?<br><img src='https://1.bp.blogspot.com/-5xv6Cg1yhFo/VNLXEhuYiXI/AAAAAAAAAXw/dNgNTrE4G5M/s1600/image002.gif' width='250'/>", "text"],
 	["<img src=\"assets/car number.png\"/>", "text"],
@@ -94,7 +94,7 @@ const QUESTIONS: [[&str; 2]; 39] = [
 	["Vilka är de 14 målspåren?<br><i>Var noga med stavningen</i>", "text"],
 	["En frukt- och grönsakshandlare är 54 år gammal, 175 cm lång och har 43 i skonummer? Vad väger han?", "text"],
 	["Vad är Dalarnas landskapsdjur?", "text"],
-	["Vad är Dalarnas landskapblomma?", "text"]
+	["Vad är Dalarnas landskapblomma?", "text"],
 	["Vad är svenskans vanligaste bokstav?", "text"],
 	["ydu xsspbunvdp sa doow (3)<br><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Retrato_de_Julio_C%C3%A9sar_%2826724093101%29.jpg/800px-Retrato_de_Julio_C%C3%A9sar_%2826724093101%29.jpg', height=350 tooltip='3'/>", "text"],
 	["Vad får du om du blandar gul och blå?", "text"],
@@ -211,4 +211,9 @@ fn match_ordered_regex_list(input: &str, answers: &[&str]) -> bool {
             }
         }
     }
+}
+
+#[wasm_bindgen]
+pub fn confirm () -> i32 {
+    42
 }
