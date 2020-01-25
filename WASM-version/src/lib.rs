@@ -1,6 +1,14 @@
 use regex::Regex;
 use wasm_bindgen::prelude::*;
 
+#[wasm_bindgen]
+extern "C" {
+	#[wasm_bindgen(js_namespace = console)]
+	fn log (s: &str);
+
+	fn print_to_screen (s: &str);
+}
+
 const SCOUTLAGEN: [&str; 8] = [
 	"söker sin tro och respekterar andras",
 	"är ärlig och pålitlig",
@@ -113,8 +121,12 @@ const QUESTIONS: [[&str; 2]; 40] = [
 ];
 
 #[wasm_bindgen]
+pub fn add_two (x: i32) -> i32 {
+	x + 2
+}
+
+#[wasm_bindgen]
 pub fn correct_question(question: i32, input: &str) -> bool {
-	println!("values in rust: {} {}", question, input);
 	match question {
 		0  => match_single_regex		(input, "lila"),
 		1  => match_exact				(input, "24"),
