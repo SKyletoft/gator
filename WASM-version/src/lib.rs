@@ -127,6 +127,7 @@ pub fn add_two (x: i32) -> i32 {
 
 #[wasm_bindgen]
 pub fn correct_question(question: i32, input: &str) -> bool {
+	log(&format!("correct_question (in rust): {}, {}", question, input));
 	match question {
 		0  => match_single_regex		(input, "lila"),
 		1  => match_exact				(input, "24"),
