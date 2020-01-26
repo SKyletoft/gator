@@ -1,14 +1,6 @@
 let riddleNumber = 0;
 let group = 3; //0: spårare, 1: upptäckare, 2: äventyrare, 3: utmanare
 
-const charFlashDiv = document.getElementById("charFlashDiv");
-const centredbody = document.getElementById("centredbody");
-const initialSetupDiv = document.getElementById("initialSetupDiv");
-const inputbox = document.getElementById("inputbox");
-const chatbox = document.getElementById("chatbox");
-const questionLabel = document.getElementById("questionLabel");
-
-
 function init(input) {
 	if (input !== undefined) {
 		centredbody.style.display = "";
