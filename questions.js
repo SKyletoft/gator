@@ -382,7 +382,7 @@ const questions = [
 	},
 	{ // 30
 		generateText: function () {
-			document.getElementById("questionLabel").innerHTML = "Vilken färg får du om du blandar vitt och rött";
+			document.getElementById("questionLabel").innerHTML = "Vilken färg får du om du blandar vitt och rött?";
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
@@ -392,7 +392,7 @@ const questions = [
 	},
 	{ // 31
 		generateText: function () {
-			document.getElementById("questionLabel").innerHTML = "Hur många scoutlagar finns det";
+			document.getElementById("questionLabel").innerHTML = "Hur många scoutlagar finns det?";
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
@@ -402,7 +402,7 @@ const questions = [
 	},
 	{ // 32
 		generateText: function () {
-			document.getElementById("questionLabel").innerHTML = "Hur många målspår finns det inom scouterna";
+			document.getElementById("questionLabel").innerHTML = "Hur många målspår finns det inom scouterna?";
 			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
