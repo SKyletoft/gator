@@ -1,19 +1,17 @@
-var localStorage = unsafeWindow.localStorage;
-
 let riddleNumber = 0;
 let group = 3; //0: spårare, 1: upptäckare, 2: äventyrare, 3: utmanare
 
 function init() {
-    if (localStorage.riddleNumber !== undefined) {
+    /*if (localStorage.riddleNumber !== undefined) {
         riddleNumber = parseInt(localStorage.riddleNumber);
         group = parseInt(localStorage.group);
         document.getElementById("centredbody").style.display = "";
         document.getElementById("initialSetupDiv").style.display = "None";
         console.log("Welcome back, I guess...");
-    } else {
+    } else {*/
         document.getElementById("centredbody").style.display = "None";
         document.getElementById("initialSetupDiv").style.display = "";
-    }
+    //}
     document.getElementById("chatbox").style.display = "None";
     console.log("But c'mon, google it instead of looking at the source code or console.\nDon't be boring!");
     document.getElementById("charFlashDiv").style.display = "None";
@@ -23,8 +21,8 @@ function init() {
 function start(selection) {
     group = selection;
     riddleNumber = 0;
-    localStorage.riddleNumber = riddleNumber;
-    localStorage.group = group;
+    //localStorage.riddleNumber = riddleNumber;
+    //localStorage.group = group;
     init();
 }
 
@@ -93,12 +91,12 @@ function changeQuestion(steps) {
 }
 
 function updatePage() {
-    localStorage.riddleNumber = riddleNumber;
+    //localStorage.riddleNumber = riddleNumber;
     questions[questionOrder[group][riddleNumber]].generateText();
 }
 
 function reset () {
-    localStorage.clear();
+    //localStorage.clear();
     location.reload();
 }
 
