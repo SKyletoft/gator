@@ -6,34 +6,22 @@ const centredbody = document.getElementById("centredbody");
 const initialSetupDiv = document.getElementById("initialSetupDiv");
 const inputbox = document.getElementById("inputbox");
 const chatbox = document.getElementById("chatbox");
+const questionLabel = document.getElementById("questionLabel");
 
 
 function init(input) {
 	if (input !== undefined) {
-		centredbody
-			.style
-			.display = "";
-		initialSetupDiv
-			.style
-			.display = "None";
+		centredbody.style.display = "";
+		initialSetupDiv.style.display = "None";
 		console.log("Welcome back, I guess...");
 	} else {
-		centredbody
-			.style
-			.display = "None";
-		initialSetupDiv
-			.style
-			.display = "";
+		centredbody.style.display = "None";
+		initialSetupDiv.style.display = "";
 	}
-	chatbox
-		.style
-		.display = "None";
+	chatbox.style.display = "None";
 	console.log("But c'mon, google it instead of looking at the source code or console.\nDon't be boring!");
-	charFlashDiv
-		.style
-		.display = "None";
-	questions[questionOrder[group][riddleNumber]]
-		.generateText();
+	charFlashDiv.style.display = "None";
+	questions[questionOrder[group][riddleNumber]].generateText();
 }
 
 function start(selection) {
@@ -51,21 +39,13 @@ function flashCharacter(char, delay) {
 }
 
 function show() {
-	charFlashDiv
-		.style
-		.display = "";
-	centredbody
-		.style
-		.display = "None";
+	charFlashDiv.style.display = "";
+	centredbody.style.display = "None";
 }
 
 function hide() {
-	charFlashDiv
-		.style
-		.display = "None";
-	centredbody
-		.style
-		.display = "";
+	charFlashDiv.style.display = "None";
+	centredbody.style.display = "";
 }
 
 function lowerCaseInput() {
@@ -93,29 +73,17 @@ function checkAnswer() {
 		inputbox.value = null;
 	} else {
 		console.log("FALSE");
-		centredbody
-			.style
-			.animationName = "fail";
-		centredbody
-			.style
-			.animationPlayState = "running";
+		centredbody.style.animationName = "fail";
+		centredbody.style.animationPlayState = "running";
 		setTimeout(endAnimation, 500);
 	}
 }
 
 function endAnimation() {
-	centredbody
-		.style
-		.animationDelay = "0s";
-	centredbody
-		.style
-		.animationPlayState = "paused";
-	centredbody
-		.style
-		.marginLeft = "10%";
-	centredbody
-		.style
-		.animationName = "success";
+	centredbody.style.animationDelay = "0s";
+	centredbody.style.animationPlayState = "paused";
+	centredbody.style.marginLeft = "10%";
+	centredbody.style.animationName = "success";
 }
 
 function changeQuestion(steps) {
@@ -150,9 +118,7 @@ document.addEventListener("keydown", key => {
 			break;
 		case "§":
 		case "F12":
-			chatbox
-				.style
-				.display = "";
+			chatbox.style.display = "";
 			startChat();
 			break;
 	};

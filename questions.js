@@ -11,6 +11,8 @@ const questionOrder = [
 	[15,  0,  1,  2,  3,  4,  5, 6,  7, 8, 9, 10, 11, 12, 13, 14],
 ];
 
+console.log(questionLabel);
+
 const questions = [
 	{ // 0
 		generateText: function () {
@@ -35,6 +37,7 @@ const questions = [
 	{ // 2
 		generateText: function () {
 			document.getElementById("questionLabel").innerHTML = "<img src=\"assets/car number.png\"/>";
+			document.getElementById("inputbox").setAttribute("type", "text");
 		},
 		validateAnswer: function () {
 			const input = lowerCaseInput();
