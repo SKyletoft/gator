@@ -1,3 +1,5 @@
+var localStorage = unsafeWindow.localStorage;
+
 let riddleNumber = 0;
 let group = 3; //0: spårare, 1: upptäckare, 2: äventyrare, 3: utmanare
 
