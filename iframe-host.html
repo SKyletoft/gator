@@ -1,15 +1,33 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>
 			Dalacamp 9: Gåtor
 		</title>
 	</head>
-	<body overflow="hidden">
-		<div style="border: 0px solid black; overflow: hidden;">
-			<iframe src="https://skyletoft.github.io/gator/index.html" style="border: 0px solid black; overflow: hidden;" margin="0px" width="100%" height="100%" overflow="hidden">
-				Tyvärr är din dator för gammal. Prova igen på en annan maskin?
+	<body overflow="hidden" margin="0">
+			<iframe
+				src="https://skyletoft.github.io/gator/index.html"
+				style="border: 0px solid black; overflow: hidden"
+				margin="0px"
+				width="100%"
+				height="100%"
+				id="iframe">
+					Tyvärr är din dator för gammal. Prova igen på en annan maskin?
 			</iframe>
 		</div>
-		
 	</body>
 </html>
+<script>
+	let iframe = document.getElementById("iframe");
+
+	iframe.height = window.innerHeight - 50;
+	document.addEventListener("resize", onResize);
+	//setInterval(onResize, 500);
+
+	function onResize () {
+		iframe.width = window.innerWidth;
+		iframe.height = window.innerHeight - 50;
+		//console.log(iframe.width, iframe.height);
+	}
+</script>

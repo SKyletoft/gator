@@ -29,7 +29,7 @@ const questions = [
 		},
 		validateAnswer: function () {
 			const input = lowerCaseInput();
-			return input === "24";
+			return input === "28";
 		}
 	},
 	{ // 2
