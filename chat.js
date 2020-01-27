@@ -41,7 +41,7 @@ let ended = false;
 
 function printChat () {
     let d = new Date();
-    document.getElementById("chatbox").innerHTML += (d.toLocaleTimeString() + " " + chat[index] + "<br>");
+    chatbox.innerHTML += (d.toLocaleTimeString() + " " + chat[index] + "<br>");
     index++;
 }
 
