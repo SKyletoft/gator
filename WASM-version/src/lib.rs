@@ -6,6 +6,8 @@ extern "C" {
 	#[wasm_bindgen(js_namespace = console)]
 	fn log (s: &str);
 
+	fn from_wasm_passer () -> String;
+
 	fn print_to_screen (s: &str);
 }
 
@@ -127,6 +129,7 @@ pub fn add_two (x: i32) -> i32 {
 
 #[wasm_bindgen]
 pub fn correct_question(question: i32, input: &str) -> bool {
+	log(&format!("{}", from_wasm_passer()));
 	log(&format!("correct_question (in rust): {}, {}", question, input));
 	match question {
 		0  => match_single_regex		(input, "lila"),

@@ -11,7 +11,7 @@ const runWasm = async () => {
 	}
 	console.log(rust.correct_question(0, "lila"));
 
-	document.getElementsByTagName("body")[0].innerHTML="<button id='theButton'>A button</button>";
+	document.getElementsByTagName("body")[0].innerHTML += "<button id='theButton'>A button</button>";
 
 	document.getElementById("theButton").addEventListener("click", () => {
 		const result = rust.correct_question(0, "lila");
